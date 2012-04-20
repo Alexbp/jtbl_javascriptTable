@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Example jtbl (javascriptTable)</title>
+		<style type="text/css">
+			body {
+				height:100%; width:100%; margin:0; padding:0; background-color:#DDD; font-family:Helvetica;
+			}
+			#mainCont {
+				margin:10px; border:solid 1px #000; background-color:#FFF; height:400px; overflow:auto;
+			}
+			#headCont {
+				margin:5px; border:solid 1px #000; background-color:#EEE;
+			}
+			#LinesCont {
+				border:solid 1px #000; height:500px; margin:5px; overflow:hidden; font-family:Helvetica;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="mainCont">
+			<div id="headCont">
+				EXAMPLE JTBL
+			</div>
+			<div id="LinesCont">
+				<table id="tblLines">
+					<thead>
+						<tr><th>#</th><th>Header 1</th><th>Header 2</th><th>Header 3</th><th>Header 4</th><th>Header 5</th><th>Header 6</th><th>Header 7</th><th>Header 8</th><th>Header 9</th></tr>
+					</thead>
+					<tbody>
+						<tr><td>0001</td><td>ABCDEF</td><td>BCDEFG</td><td>CDEFGH</td><td>DEFGHI</td><td>EFGHIJ</td><td>FGHIJK</td><td>GHIJKL</td><td>00010</td><td>00</td></tr>
+						<tr><td>0002</td><td>HIJKLM</td><td>IJKLMN</td><td>JKLMNO</td><td>KLMNOP</td><td>LMNOPQ</td><td>MNOPQR</td><td>NOPQRS</td><td>00020</td><td>01</td></tr>
+						<tr><td>0003</td><td>OPQRST</td><td>PQRSTU</td><td>QRSTUV</td><td>RSTUVW</td><td>STUVWX</td><td>TUVWXY</td><td>UVWXYZ</td><td>00030</td><td>02</td></tr>
+						<tr><td>0004</td><td>VWXYZA</td><td>WXYZAB</td><td>XYZABC</td><td>YZABCD</td><td>ZABCDE</td><td>ABCDEF</td><td>BCDEFG</td><td>00040</td><td>03</td></tr>
+						<tr><td>0005</td><td>CDEFGH</td><td>DEFGHI</td><td>EFGHIJ</td><td>FGHIJK</td><td>GHIJKL</td><td>HIJKLM</td><td>IJKLMN</td><td>00050</td><td>04</td></tr>
+						<tr><td>0006</td><td>JKLMNO</td><td>KLMNOP</td><td>LMNOPQ</td><td>MNOPQR</td><td>NOPQRS</td><td>OPQRST</td><td>PQRSTU</td><td>00060</td><td>05</td></tr>
+						<tr><td>0007</td><td>QRSTUV</td><td>RSTUVW</td><td>STUVWX</td><td>TUVWXY</td><td>UVWXYZ</td><td>VWXYZA</td><td>WXYZAB</td><td>00070</td><td>06</td></tr>
+						<tr><td>0008</td><td>XYZABC</td><td>YZABCD</td><td>ZABCDE</td><td>ABCDEF</td><td>BCDEFG</td><td>CDEFGH</td><td>DEFGHI</td><td>00080</td><td>07</td></tr>
+						<tr><td>0009</td><td>EFGHIJ</td><td>FGHIJK</td><td>GHIJKL</td><td>HIJKLM</td><td>IJKLMN</td><td>JKLMNO</td><td>KLMNOP</td><td>00090</td><td>08</td></tr>
+						<tr><td>0010</td><td>LMNOPQ</td><td>MNOPQR</td><td>NOPQRS</td><td>OPQRST</td><td>PQRSTU</td><td>QRSTUV</td><td>RSTUVW</td><td>00100</td><td>09</td></tr>
+						<tr><td>0011</td><td>STUVWX</td><td>TUVWXY</td><td>UVWXYZ</td><td>VWXYZA</td><td>WXYZAB</td><td>XYZABC</td><td>YZABCD</td><td>00110</td><td>10</td></tr>
+						<tr><td>0012</td><td>ZABCDE</td><td>ABCDEF</td><td>BCDEFG</td><td>CDEFGH</td><td>DEFGHI</td><td>EFGHIJ</td><td>FGHIJK</td><td>00120</td><td>11</td></tr>
+						<tr><td>0013</td><td>GHIJKL</td><td>HIJKLM</td><td>IJKLMN</td><td>JKLMNO</td><td>KLMNOP</td><td>LMNOPQ</td><td>MNOPQR</td><td>00130</td><td>12</td></tr>
+						<tr><td>0014</td><td>NOPQRS</td><td>OPQRST</td><td>PQRSTU</td><td>QRSTUV</td><td>RSTUVW</td><td>STUVWX</td><td>TUVWXY</td><td>00140</td><td>13</td></tr>
+						<tr><td>0015</td><td>UVWXYZ</td><td>VWXYZA</td><td>WXYZAB</td><td>XYZABC</td><td>YZABCD</td><td>ZABCDE</td><td>ABCDEF</td><td>00150</td><td>14</td></tr>
+						<tr><td>0016</td><td>BCDEFG</td><td>CDEFGH</td><td>DEFGHI</td><td>EFGHIJ</td><td>FGHIJK</td><td>GHIJKL</td><td>HIJKLM</td><td>00160</td><td>15</td></tr>
+						<tr><td>0017</td><td>IJKLMN</td><td>JKLMNO</td><td>KLMNOP</td><td>LMNOPQ</td><td>MNOPQR</td><td>NOPQRS</td><td>OPQRST</td><td>00170</td><td>16</td></tr>
+						<tr><td>0018</td><td>PQRSTU</td><td>QRSTUV</td><td>RSTUVW</td><td>STUVWX</td><td>TUVWXY</td><td>UVWXYZ</td><td>VWXYZA</td><td>00180</td><td>17</td></tr>
+						<tr><td>0019</td><td>WXYZAB</td><td>XYZABC</td><td>YZABCD</td><td>ZABCDE</td><td>ABCDEF</td><td>BCDEFG</td><td>CDEFGH</td><td>00190</td><td>18</td></tr>
+						<tr><td>0020</td><td>DEFGHI</td><td>EFGHIJ</td><td>FGHIJK</td><td>GHIJKL</td><td>HIJKLM</td><td>IJKLMN</td><td>JKLMNO</td><td>00200</td><td>19</td></tr>
+						<tr><td>0021</td><td>KLMNOP</td><td>LMNOPQ</td><td>MNOPQR</td><td>NOPQRS</td><td>OPQRST</td><td>PQRSTU</td><td>QRSTUV</td><td>00210</td><td>20</td></tr>
+						<tr><td>0022</td><td>RSTUVW</td><td>STUVWX</td><td>TUVWXY</td><td>UVWXYZ</td><td>VWXYZA</td><td>WXYZAB</td><td>XYZABC</td><td>00220</td><td>21</td></tr>
+						<tr><td>0023</td><td>YZABCD</td><td>ZABCDE</td><td>ABCDEF</td><td>BCDEFG</td><td>CDEFGH</td><td>DEFGHI</td><td>EFGHIJ</td><td>00230</td><td>22</td></tr>
+						<tr><td>0024</td><td>FGHIJK</td><td>GHIJKL</td><td>HIJKLM</td><td>IJKLMN</td><td>JKLMNO</td><td>KLMNOP</td><td>LMNOPQ</td><td>00240</td><td>23</td></tr>
+						<tr><td>0025</td><td>MNOPQR</td><td>NOPQRS</td><td>OPQRST</td><td>PQRSTU</td><td>QRSTUV</td><td>RSTUVW</td><td>STUVWX</td><td>00250</td><td>24</td></tr>
+						<tr><td>0026</td><td>TUVWXY</td><td>UVWXYZ</td><td>VWXYZA</td><td>WXYZAB</td><td>XYZABC</td><td>YZABCD</td><td>ZABCDE</td><td>00260</td><td>25</td></tr>
+						<tr><td>0027</td><td>ABCDEF</td><td>BCDEFG</td><td>CDEFGH</td><td>DEFGHI</td><td>EFGHIJ</td><td>FGHIJK</td><td>GHIJKL</td><td>00270</td><td>26</td></tr>
+						<tr><td>0028</td><td>HIJKLM</td><td>IJKLMN</td><td>JKLMNO</td><td>KLMNOP</td><td>LMNOPQ</td><td>MNOPQR</td><td>NOPQRS</td><td>00280</td><td>27</td></tr>
+						<tr><td>0029</td><td>OPQRST</td><td>PQRSTU</td><td>QRSTUV</td><td>RSTUVW</td><td>STUVWX</td><td>TUVWXY</td><td>UVWXYZ</td><td>00290</td><td>28</td></tr>
+						<tr><td>0030</td><td>VWXYZA</td><td>WXYZAB</td><td>XYZABC</td><td>YZABCD</td><td>ZABCDE</td><td>ABCDEF</td><td>BCDEFG</td><td>00300</td><td>29</td></tr>
+						<tr><td>0031</td><td>CDEFGH</td><td>DEFGHI</td><td>EFGHIJ</td><td>FGHIJK</td><td>GHIJKL</td><td>HIJKLM</td><td>IJKLMN</td><td>00310</td><td>30</td></tr>
+						<tr><td>0032</td><td>JKLMNO</td><td>KLMNOP</td><td>LMNOPQ</td><td>MNOPQR</td><td>NOPQRS</td><td>OPQRST</td><td>PQRSTU</td><td>00320</td><td>31</td></tr>
+						<tr><td>0033</td><td>QRSTUV</td><td>RSTUVW</td><td>STUVWX</td><td>TUVWXY</td><td>UVWXYZ</td><td>VWXYZA</td><td>WXYZAB</td><td>00330</td><td>32</td></tr>
+						<tr><td>0034</td><td>XYZABC</td><td>YZABCD</td><td>ZABCDE</td><td>ABCDEF</td><td>BCDEFG</td><td>CDEFGH</td><td>DEFGHI</td><td>00340</td><td>33</td></tr>
+						<tr><td>0035</td><td>EFGHIJ</td><td>FGHIJK</td><td>GHIJKL</td><td>HIJKLM</td><td>IJKLMN</td><td>JKLMNO</td><td>KLMNOP</td><td>00350</td><td>34</td></tr>
+						<tr><td>0036</td><td>LMNOPQ</td><td>MNOPQR</td><td>NOPQRS</td><td>OPQRST</td><td>PQRSTU</td><td>QRSTUV</td><td>RSTUVW</td><td>00360</td><td>35</td></tr>
+						<tr><td>0037</td><td>STUVWX</td><td>TUVWXY</td><td>UVWXYZ</td><td>VWXYZA</td><td>WXYZAB</td><td>XYZABC</td><td>YZABCD</td><td>00370</td><td>36</td></tr>
+						<tr><td>0038</td><td>ZABCDE</td><td>ABCDEF</td><td>BCDEFG</td><td>CDEFGH</td><td>DEFGHI</td><td>EFGHIJ</td><td>FGHIJK</td><td>00380</td><td>37</td></tr>
+						<tr><td>0039</td><td>GHIJKL</td><td>HIJKLM</td><td>IJKLMN</td><td>JKLMNO</td><td>KLMNOP</td><td>LMNOPQ</td><td>MNOPQR</td><td>00390</td><td>38</td></tr>
+						<tr><td>0040</td><td>NOPQRS</td><td>OPQRST</td><td>PQRSTU</td><td>QRSTUV</td><td>RSTUVW</td><td>STUVWX</td><td>TUVWXY</td><td>00400</td><td>39</td></tr>
+						<tr><td>0041</td><td>UVWXYZ</td><td>VWXYZA</td><td>WXYZAB</td><td>XYZABC</td><td>YZABCD</td><td>ZABCDE</td><td>ABCDEF</td><td>00410</td><td>40</td></tr>
+						<tr><td>0042</td><td>BCDEFG</td><td>CDEFGH</td><td>DEFGHI</td><td>EFGHIJ</td><td>FGHIJK</td><td>GHIJKL</td><td>HIJKLM</td><td>00420</td><td>41</td></tr>
+						<tr><td>0043</td><td>IJKLMN</td><td>JKLMNO</td><td>KLMNOP</td><td>LMNOPQ</td><td>MNOPQR</td><td>NOPQRS</td><td>OPQRST</td><td>00430</td><td>42</td></tr>
+						<tr><td>0044</td><td>PQRSTU</td><td>QRSTUV</td><td>RSTUVW</td><td>STUVWX</td><td>TUVWXY</td><td>UVWXYZ</td><td>VWXYZA</td><td>00440</td><td>00</td></tr>
+						<tr><td>0045</td><td>WXYZAB</td><td>XYZABC</td><td>YZABCD</td><td>ZABCDE</td><td>ABCDEF</td><td>BCDEFG</td><td>CDEFGH</td><td>00450</td><td>01</td></tr>
+						<tr><td>0046</td><td>DEFGHI</td><td>EFGHIJ</td><td>FGHIJK</td><td>GHIJKL</td><td>HIJKLM</td><td>IJKLMN</td><td>JKLMNO</td><td>00460</td><td>02</td></tr>
+						<tr><td>0047</td><td>KLMNOP</td><td>LMNOPQ</td><td>MNOPQR</td><td>NOPQRS</td><td>OPQRST</td><td>PQRSTU</td><td>QRSTUV</td><td>00470</td><td>03</td></tr>
+						<tr><td>0048</td><td>RSTUVW</td><td>STUVWX</td><td>TUVWXY</td><td>UVWXYZ</td><td>VWXYZA</td><td>WXYZAB</td><td>XYZABC</td><td>00480</td><td>04</td></tr>
+						<tr><td>0049</td><td>YZABCD</td><td>ZABCDE</td><td>ABCDEF</td><td>BCDEFG</td><td>CDEFGH</td><td>DEFGHI</td><td>EFGHIJ</td><td>00490</td><td>05</td></tr>
+						<tr><td>0050</td><td>FGHIJK</td><td>GHIJKL</td><td>HIJKLM</td><td>IJKLMN</td><td>JKLMNO</td><td>KLMNOP</td><td>LMNOPQ</td><td>00500</td><td>06</td></tr>
+						<tr><td>0051</td><td>MNOPQR</td><td>NOPQRS</td><td>OPQRST</td><td>PQRSTU</td><td>QRSTUV</td><td>RSTUVW</td><td>STUVWX</td><td>00510</td><td>07</td></tr>
+						<tr><td>0052</td><td>TUVWXY</td><td>UVWXYZ</td><td>VWXYZA</td><td>WXYZAB</td><td>XYZABC</td><td>YZABCD</td><td>ZABCDE</td><td>00520</td><td>08</td></tr>
+						<tr><td>0053</td><td>ABCDEF</td><td>BCDEFG</td><td>CDEFGH</td><td>DEFGHI</td><td>EFGHIJ</td><td>FGHIJK</td><td>GHIJKL</td><td>00530</td><td>09</td></tr>
+						<tr><td>0054</td><td>HIJKLM</td><td>IJKLMN</td><td>JKLMNO</td><td>KLMNOP</td><td>LMNOPQ</td><td>MNOPQR</td><td>NOPQRS</td><td>00540</td><td>10</td></tr>
+						<tr><td>0055</td><td>OPQRST</td><td>PQRSTU</td><td>QRSTUV</td><td>RSTUVW</td><td>STUVWX</td><td>TUVWXY</td><td>UVWXYZ</td><td>00550</td><td>11</td></tr>
+						<tr><td>0056</td><td>VWXYZA</td><td>WXYZAB</td><td>XYZABC</td><td>YZABCD</td><td>ZABCDE</td><td>ABCDEF</td><td>BCDEFG</td><td>00560</td><td>12</td></tr>
+						<tr><td>0057</td><td>CDEFGH</td><td>DEFGHI</td><td>EFGHIJ</td><td>FGHIJK</td><td>GHIJKL</td><td>HIJKLM</td><td>IJKLMN</td><td>00570</td><td>13</td></tr>
+						<tr><td>0058</td><td>JKLMNO</td><td>KLMNOP</td><td>LMNOPQ</td><td>MNOPQR</td><td>NOPQRS</td><td>OPQRST</td><td>PQRSTU</td><td>00580</td><td>14</td></tr>
+						<tr><td>0059</td><td>QRSTUV</td><td>RSTUVW</td><td>STUVWX</td><td>TUVWXY</td><td>UVWXYZ</td><td>VWXYZA</td><td>WXYZAB</td><td>00590</td><td>15</td></tr>
+						<tr><td>0060</td><td>XYZABC</td><td>YZABCD</td><td>ZABCDE</td><td>ABCDEF</td><td>BCDEFG</td><td>CDEFGH</td><td>DEFGHI</td><td>00600</td><td>16</td></tr>
+						<tr><td>0061</td><td>EFGHIJ</td><td>FGHIJK</td><td>GHIJKL</td><td>HIJKLM</td><td>IJKLMN</td><td>JKLMNO</td><td>KLMNOP</td><td>00610</td><td>17</td></tr>
+						<tr><td>0062</td><td>LMNOPQ</td><td>MNOPQR</td><td>NOPQRS</td><td>OPQRST</td><td>PQRSTU</td><td>QRSTUV</td><td>RSTUVW</td><td>00620</td><td>18</td></tr>
+						<tr><td>0063</td><td>STUVWX</td><td>TUVWXY</td><td>UVWXYZ</td><td>VWXYZA</td><td>WXYZAB</td><td>XYZABC</td><td>YZABCD</td><td>00630</td><td>19</td></tr>
+						<tr><td>0064</td><td>ZABCDE</td><td>ABCDEF</td><td>BCDEFG</td><td>CDEFGH</td><td>DEFGHI</td><td>EFGHIJ</td><td>FGHIJK</td><td>00640</td><td>20</td></tr>
+						<tr><td>0065</td><td>GHIJKL</td><td>HIJKLM</td><td>IJKLMN</td><td>JKLMNO</td><td>KLMNOP</td><td>LMNOPQ</td><td>MNOPQR</td><td>00650</td><td>21</td></tr>
+						<tr><td>0066</td><td>NOPQRS</td><td>OPQRST</td><td>PQRSTU</td><td>QRSTUV</td><td>RSTUVW</td><td>STUVWX</td><td>TUVWXY</td><td>00660</td><td>22</td></tr>
+						<tr><td>0067</td><td>UVWXYZ</td><td>VWXYZA</td><td>WXYZAB</td><td>XYZABC</td><td>YZABCD</td><td>ZABCDE</td><td>ABCDEF</td><td>00670</td><td>23</td></tr>
+						<tr><td>0068</td><td>BCDEFG</td><td>CDEFGH</td><td>DEFGHI</td><td>EFGHIJ</td><td>FGHIJK</td><td>GHIJKL</td><td>HIJKLM</td><td>00680</td><td>24</td></tr>
+						<tr><td>0069</td><td>IJKLMN</td><td>JKLMNO</td><td>KLMNOP</td><td>LMNOPQ</td><td>MNOPQR</td><td>NOPQRS</td><td>OPQRST</td><td>00690</td><td>25</td></tr>
+						<tr><td>0070</td><td>PQRSTU</td><td>QRSTUV</td><td>RSTUVW</td><td>STUVWX</td><td>TUVWXY</td><td>UVWXYZ</td><td>VWXYZA</td><td>00700</td><td>26</td></tr>
+						<tr><td>0071</td><td>WXYZAB</td><td>XYZABC</td><td>YZABCD</td><td>ZABCDE</td><td>ABCDEF</td><td>BCDEFG</td><td>CDEFGH</td><td>00710</td><td>27</td></tr>
+						<tr><td>0072</td><td>DEFGHI</td><td>EFGHIJ</td><td>FGHIJK</td><td>GHIJKL</td><td>HIJKLM</td><td>IJKLMN</td><td>JKLMNO</td><td>00720</td><td>28</td></tr>
+						<tr><td>0073</td><td>KLMNOP</td><td>LMNOPQ</td><td>MNOPQR</td><td>NOPQRS</td><td>OPQRST</td><td>PQRSTU</td><td>QRSTUV</td><td>00730</td><td>29</td></tr>
+						<tr><td>0074</td><td>RSTUVW</td><td>STUVWX</td><td>TUVWXY</td><td>UVWXYZ</td><td>VWXYZA</td><td>WXYZAB</td><td>XYZABC</td><td>00740</td><td>30</td></tr>
+						<tr><td>0075</td><td>YZABCD</td><td>ZABCDE</td><td>ABCDEF</td><td>BCDEFG</td><td>CDEFGH</td><td>DEFGHI</td><td>EFGHIJ</td><td>00750</td><td>31</td></tr>
+						<tr><td>0076</td><td>FGHIJK</td><td>GHIJKL</td><td>HIJKLM</td><td>IJKLMN</td><td>JKLMNO</td><td>KLMNOP</td><td>LMNOPQ</td><td>00760</td><td>32</td></tr>
+						<tr><td>0077</td><td>MNOPQR</td><td>NOPQRS</td><td>OPQRST</td><td>PQRSTU</td><td>QRSTUV</td><td>RSTUVW</td><td>STUVWX</td><td>00770</td><td>33</td></tr>
+						<tr><td>0078</td><td>TUVWXY</td><td>UVWXYZ</td><td>VWXYZA</td><td>WXYZAB</td><td>XYZABC</td><td>YZABCD</td><td>ZABCDE</td><td>00780</td><td>34</td></tr>
+						<tr><td>0079</td><td>ABCDEF</td><td>BCDEFG</td><td>CDEFGH</td><td>DEFGHI</td><td>EFGHIJ</td><td>FGHIJK</td><td>GHIJKL</td><td>00790</td><td>35</td></tr>
+						<tr><td>0080</td><td>HIJKLM</td><td>IJKLMN</td><td>JKLMNO</td><td>KLMNOP</td><td>LMNOPQ</td><td>MNOPQR</td><td>NOPQRS</td><td>00800</td><td>36</td></tr>
+						<tr><td>0081</td><td>OPQRST</td><td>PQRSTU</td><td>QRSTUV</td><td>RSTUVW</td><td>STUVWX</td><td>TUVWXY</td><td>UVWXYZ</td><td>00810</td><td>37</td></tr>
+						<tr><td>0082</td><td>VWXYZA</td><td>WXYZAB</td><td>XYZABC</td><td>YZABCD</td><td>ZABCDE</td><td>ABCDEF</td><td>BCDEFG</td><td>00820</td><td>38</td></tr>
+						<tr><td>0083</td><td>CDEFGH</td><td>DEFGHI</td><td>EFGHIJ</td><td>FGHIJK</td><td>GHIJKL</td><td>HIJKLM</td><td>IJKLMN</td><td>00830</td><td>39</td></tr>
+						<tr><td>0084</td><td>JKLMNO</td><td>KLMNOP</td><td>LMNOPQ</td><td>MNOPQR</td><td>NOPQRS</td><td>OPQRST</td><td>PQRSTU</td><td>00840</td><td>40</td></tr>
+						<tr><td>0085</td><td>QRSTUV</td><td>RSTUVW</td><td>STUVWX</td><td>TUVWXY</td><td>UVWXYZ</td><td>VWXYZA</td><td>WXYZAB</td><td>00850</td><td>41</td></tr>
+						<tr><td>0086</td><td>XYZABC</td><td>YZABCD</td><td>ZABCDE</td><td>ABCDEF</td><td>BCDEFG</td><td>CDEFGH</td><td>DEFGHI</td><td>00860</td><td>42</td></tr>
+						<tr><td>0087</td><td>EFGHIJ</td><td>FGHIJK</td><td>GHIJKL</td><td>HIJKLM</td><td>IJKLMN</td><td>JKLMNO</td><td>KLMNOP</td><td>00870</td><td>00</td></tr>
+						<tr><td>0088</td><td>LMNOPQ</td><td>MNOPQR</td><td>NOPQRS</td><td>OPQRST</td><td>PQRSTU</td><td>QRSTUV</td><td>RSTUVW</td><td>00880</td><td>01</td></tr>
+						<tr><td>0089</td><td>STUVWX</td><td>TUVWXY</td><td>UVWXYZ</td><td>VWXYZA</td><td>WXYZAB</td><td>XYZABC</td><td>YZABCD</td><td>00890</td><td>02</td></tr>
+						<tr><td>0090</td><td>ZABCDE</td><td>ABCDEF</td><td>BCDEFG</td><td>CDEFGH</td><td>DEFGHI</td><td>EFGHIJ</td><td>FGHIJK</td><td>00900</td><td>03</td></tr>
+						<tr><td>0091</td><td>GHIJKL</td><td>HIJKLM</td><td>IJKLMN</td><td>JKLMNO</td><td>KLMNOP</td><td>LMNOPQ</td><td>MNOPQR</td><td>00910</td><td>04</td></tr>
+						<tr><td>0092</td><td>NOPQRS</td><td>OPQRST</td><td>PQRSTU</td><td>QRSTUV</td><td>RSTUVW</td><td>STUVWX</td><td>TUVWXY</td><td>00920</td><td>05</td></tr>
+						<tr><td>0093</td><td>UVWXYZ</td><td>VWXYZA</td><td>WXYZAB</td><td>XYZABC</td><td>YZABCD</td><td>ZABCDE</td><td>ABCDEF</td><td>00930</td><td>06</td></tr>
+						<tr><td>0094</td><td>BCDEFG</td><td>CDEFGH</td><td>DEFGHI</td><td>EFGHIJ</td><td>FGHIJK</td><td>GHIJKL</td><td>HIJKLM</td><td>00940</td><td>07</td></tr>
+						<tr><td>0095</td><td>IJKLMN</td><td>JKLMNO</td><td>KLMNOP</td><td>LMNOPQ</td><td>MNOPQR</td><td>NOPQRS</td><td>OPQRST</td><td>00950</td><td>08</td></tr>
+						<tr><td>0096</td><td>PQRSTU</td><td>QRSTUV</td><td>RSTUVW</td><td>STUVWX</td><td>TUVWXY</td><td>UVWXYZ</td><td>VWXYZA</td><td>00960</td><td>09</td></tr>
+						<tr><td>0097</td><td>WXYZAB</td><td>XYZABC</td><td>YZABCD</td><td>ZABCDE</td><td>ABCDEF</td><td>BCDEFG</td><td>CDEFGH</td><td>00970</td><td>10</td></tr>
+						<tr><td>0098</td><td>DEFGHI</td><td>EFGHIJ</td><td>FGHIJK</td><td>GHIJKL</td><td>HIJKLM</td><td>IJKLMN</td><td>JKLMNO</td><td>00980</td><td>11</td></tr>
+						<tr><td>0099</td><td>KLMNOP</td><td>LMNOPQ</td><td>MNOPQR</td><td>NOPQRS</td><td>OPQRST</td><td>PQRSTU</td><td>QRSTUV</td><td>00990</td><td>12</td></tr>
+						<tr><td>0100</td><td>RSTUVW</td><td>STUVWX</td><td>TUVWXY</td><td>UVWXYZ</td><td>VWXYZA</td><td>WXYZAB</td><td>XYZABC</td><td>01000</td><td>13</td></tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>
+
+<script type="text/javascript" src="jtbl.js"></script>
+<script type="text/javascript">
+	/* LOAD FUCTIONS ********************************************************************** */
+	
+	var jtLin = null;
+	
+	function resizeWindows()
+	{
+		resizeScreenHeight(ge("mainCont"), 400, 40);
+		var mc = elemSize("mainCont").height;
+		var tla = getRealOffset(ge("LinesCont")).top;
+		ge("LinesCont").style.height = (mc - tla - 10) + "px";
+	}
+	
+	window.onload = function()
+	{
+		resizeWindows();
+		
+		loadTable();
+	}
+	
+	window.onresize = function()
+	{
+		resizeWindows();
+	}
+	
+	function loadTable()
+	{
+		if(jtLin == null)
+		{
+			jtLin = new jtbl();
+			/** COMMENT NEXT LINES TO DEACTIVATE OPTIONS ******** **/
+			jtLin.tableHeader_click = head_click;
+			jtLin.tableField_add = field_add;
+			jtLin.tableField_change = field_change;
+			jtLin.tableRow_click = row_click;
+			jtLin.tableField_click = cell_click;
+			
+			jtLin.resizeCol = true;
+			jtLin.blqFirstCol = true;
+			
+			jtLin.fontSize = 14;
+			/** ************************************************* **/
+		}
+		jtLin.load("tblLines");
+	}
+</script>
+<script type="text/javascript">
+	/* TABLE EVENTS FUCTIONS ************************************************************** */
+	
+	function head_click(pos, order)
+	{
+		try
+		{
+			var line = "?opt=head_click";
+			line += "&pos=" + pos;
+			line += "&order=" + order;
+			
+			alert(line.split("&").join("\r\n"));
+		}
+		catch(err)
+		{
+			alert("#ERROR head_click: " + err);
+		}
+	}
+	
+    function field_add(tr)
+    {
+        try
+        {
+            var cell01 = tr.cells[1].firstChild.value;
+            var cell02 = tr.cells[2].firstChild.value;
+            var cell03 = tr.cells[3].firstChild.value;
+            var cell04 = tr.cells[4].firstChild.value;
+            var cell05 = tr.cells[5].firstChild.value;
+            var cell06 = tr.cells[6].firstChild.value;
+            var cell07 = tr.cells[7].firstChild.value;
+            var cell08 = tr.cells[8].firstChild.value;
+            var cell09 = tr.cells[9].firstChild.value;
+            
+			var line = "?opt=field_add";
+			line += "&cell01=" + cell01;
+			line += "&cell02=" + cell02;
+			line += "&cell03=" + cell03;
+			line += "&cell04=" + cell04;
+			line += "&cell05=" + cell05;
+			line += "&cell06=" + cell06;
+			line += "&cell07=" + cell07;
+			line += "&cell08=" + cell08;
+			line += "&cell09=" + cell09;
+			
+			addRow(tr);
+			alert(line.split("&").join("\r\n"));
+        }
+        catch(err)
+        {
+            alert("#ERROR field_add: " + err);
+        }
+    }
+	
+	function field_change(input, oldValue)
+	{
+		var otr = input.parentNode.parentNode;
+		var oar = otr.childNodes;
+		
+		var modField = input.parentNode.cellIndex - 1;
+		
+		var firstField = (oar[1].firstChild.nodeName == "INPUT" ? oar[1].firstChild.value : oar[1].innerHTML);
+		
+		var line = "?opt=field_change";
+		line += "&firstField=" + firstField;
+		line += "&modField=" + modField;
+		line += "&oldValue=" + oldValue;
+		line += "&newValue=" + input.value;
+		
+		alert(line.split("&").join("\r\n"));
+	}
+	
+    function row_click(tr)
+    {
+        var index = -1;
+        var tbl = tr.parentNode;
+        for(var i = 0; i < tbl.rows.length && index == -1; i++){
+            if(tbl.rows[i] == tr) index = i;
+        }
+        var firstField = tr.cells[1].innerHTML;
+        
+        if(confirm("Delete row id:'" + index  + "'?\r\n" + 
+            "firstField: '" + firstField + "'."))
+        {
+			var line = "?opt=row_click";
+			line += "&index=" + index;
+			line += "&firstField=" + firstField;
+			
+			alert(line.split("&").join("\r\n"));
+            
+            tr.parentNode.deleteRow(index);
+        }
+    }
+	
+	function cell_click(input)
+	{
+		try
+		{
+			var tr = input.parentNode.parentNode;
+			var i = 0;
+			while(tr.cells[i] && tr.cells[i].firstChild != input){ i++; }
+			if(i > 7) setTimeout(function(){ selText(input); }, 10);
+		}
+		catch(err){ console.error("#ERROR cell_click: ", err); }
+	}
+</script>
+<script type="text/javascript">
+	/* SUPPORT TABLE FUCTIONS ************************************************************* */
+	
+	function addRow(tr)
+	{
+		var trElem = null, tdElem = null;
+		trElem = document.createElement("tr");
+		for(var i = 0; i < tr.cells.length; i++)
+		{
+			tdElem = trElem.insertCell(i);
+			if(i == 0 && jtLin.blqFirstCol)
+				tdElem.innerHTML = ">";
+			else
+			{
+				tdElem.innerHTML = tr.cells[i].firstChild.value;
+				tdElem.style.backgroundColor = "#CC8";
+			}
+		}
+		jtLin.setRow(trElem);
+	}
+</script>
+<script type="text/javascript">
+	/* SUPPORT FUCTIONS ******************************************************************* */
+	
+	function ge(id)
+	{
+		return document.getElementById(id);
+	}
+	
+	function getScreenSize()
+	{
+		var hh = 0;
+		var ww = 0;
+		try
+		{
+			if(window.innerHeight)
+				hh = window.innerHeight;
+			else
+			{
+				if(ge("dBR_End"))
+					hh = ge("dBR_End").offsetTop;
+				else
+				{
+					var newField = document.createElement("div");
+					newField.id = "dBR_End";
+					newField.style.position = "absolute";
+					newField.style.bottom = "0px";
+					newField.style.right = "0px";
+					newField.style.height = "0px";
+					newField.style.width = "0px";
+					document.body.appendChild(newField);
+					
+					hh = newField.offsetTop;
+				}
+			}
+			
+			if(window.innerWidth)
+				ww = window.innerWidth;
+			else
+			{
+				if(ge("dBR_End"))
+					ww = ge("dBR_End").offsetLeft;
+				else
+				{
+					var newField = document.createElement("div");
+					newField.id = "dBR_End";
+					newField.style.position = "absolute";
+					newField.style.bottom = "0px";
+					newField.style.right = "0px";
+					newField.style.height = "0px";
+					newField.style.width = "0px";
+					document.body.appendChild(newField);
+					
+					ww = newField.offsetLeft;
+				}
+			}
+		}
+		catch(err)
+		{
+			hh = 0;
+			ww = 0;
+		}
+		return { height: hh, width: ww }
+	}
+	
+	function resizeScreenHeight(obj, minHeight, margin)
+	{
+		var hh = getScreenSize().height;
+		if(hh < minHeight) hh = minHeight;
+		obj.style.height = (hh - obj.offsetTop - margin) + "px";
+	}
+	
+	function elemSize(id)
+	{
+		var hh = 0;
+		var ww = 0;
+		try
+		{
+			var elem = document.getElementById(id);
+			hh = elem.clientHeight;
+			ww = elem.clientWidth;
+		}
+		catch(err)
+		{
+			hh = 0;
+			ww = 0;
+		}
+		return { height: hh, width: ww }
+	}
+	
+	function getRealOffset(elem)
+	{
+		var leftOffset = elem.offsetLeft;
+		var topOffset = elem.offsetTop;
+		var parent = elem.offsetParent;
+		
+		try
+		{
+			while(parent != document.body)
+			{
+				leftOffset += parent.offsetLeft;
+				topOffset += parent.offsetTop;
+				parent = parent.offsetParent;
+			}
+		}catch(err) { }
+		var Offsets = {
+			top: topOffset,
+			left: leftOffset
+		}
+		return Offsets;
+	}
+	
+	function selText(obj)
+	{
+		if(obj.nodeName.toLowerCase() == "textarea" || (obj.nodeName.toLowerCase() == "input" && obj.type == "text"))
+		{
+			obj.select();
+			return;
+		}
+		if (window.getSelection)
+		{
+			var sel = window.getSelection();
+			var range = document.createRange();
+			range.selectNodeContents(obj);
+			sel.removeAllRanges();
+			sel.addRange(range);
+		}
+		else if (document.selection)
+		{
+			document.selection.empty();
+			var range = document.body.createTextRange();
+			range.moveToElementText(obj);
+			range.select();
+		}
+	}
+</script>
